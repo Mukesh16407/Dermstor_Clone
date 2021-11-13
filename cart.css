@@ -1,0 +1,29 @@
+.cartBox{
+    width: 100%;
+    background-color: white;
+    height: fit-content;
+}
+.topBox{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content:space-between;
+    align-content: center;
+    padding: 5px;
+    
+}
+.topBox > div:nth-child(1){
+   margin-top: 30px;
+   
+}
+.h2item{
+    font-weight: 300;
+}
+.alertbox{
+    background-color: rgb(242,249,255);
+    width: 95%;
+    height: 30px;
+    padding: 5px;
+    color: rgb(38,123,165);
+    margin: 10px auto ;
+}
