@@ -226,55 +226,62 @@ var Data7 = [
         type: "Obagi Nu-Cil Eyelash Enhancing Serum 3ml",
         MRP:120.00,
     },
-    {
-        image_url:
-        "https://static.thcdn.com/images/small/webp/widgets/208-us/21/skin-care-products-widget-085821.jpg",
-        type: "Spoil Mom This Year with These Beauty Gifts",
-       
-    },
-    {
-        image_url:
-        "https://static.thcdn.com/images/small/webp/widgets/208-us/23/skin-care-and-makeup-products-widget-085723.jpg",
-        type: "Perfect Presents to Pamper Your Bestie",
-       
-
-    },
-    {
-        image_url:
-        "https://static.thcdn.com/images/small/webp/widgets/208-us/19/1200-x-672-080319.png",
-        type: "6 Winter Skin Care Tips You Need to Know",
-
-    },
-    {
-        image_url:
-        "https://static.thcdn.com/images/small/webp/widgets/208-us/55/isclinical-products-widget-074955.jpg",
-        type: "Skin Care Gifts You’ll Want to Keep for Yourself",
-
-    },
-    {
-        image_url:
-        "https://static.thcdn.com/images/small/webp/widgets/208-us/44/peter-thomas-roth-products-widget-044244.jpg",
-        type: "Our Top Gifts for Some Much-Needed Self-Care",
-
-    },
-    {
-        image_url:
-        "https://static.thcdn.com/images/small/webp/widgets/208-us/40/skinceuticals-products-widget-110940.jpg",
-        type: "7 Overnight Treatments for Super Glowy Skin",
-        
-    },
-   
-   
-    
+  
    
   ];
+
+  var cart = JSON.parse(localStorage.getItem("Dermcart")) || [];
+
+  function handlePriceSort() {
+    var selected = document.getElementById("sortByprice").value;
+    //console.log(selected);
+    if(selected === "low"){
+      Data7 = Data7.sort(function (a, b) {
+        return a.MRP - b.MRP
+      })
+    }
+    if(selected === "high"){
+      Data7 = Data7.sort(function (a, b) {
+        return b.MRP - a.MRP
+      })
+    }
+    console.log(Data7);
+    showProducts(Data7)
+  }
+  function handleNameSort() {
+    var selected = document.getElementById("sortByName").value;
+    //console.log(selected);
+    if(selected === "asc"){
+      Data7 = Data7.sort(function (a, b) {
+        return a.type > b.type ? 1 : b.type > a.type ? -1 : 0 
+      })
+    }
+    if(selected === "dsc"){
+      Data7 = Data7.sort(function (a, b) {
+        return a.type > b.type ? -1 : b.type > a.type ? 1 : 0 
+      })
+    }
+    console.log(Data7);
+    showProducts(Data7)
+  }
+  //var output = product.filter(searchByName);
+  
+  var search =  document.getElementById("filterDiv");
+  search.addEventListener("input", searchByName)
+  function searchByName(el) {
+   var searchProd = Data7.filter(function (item) {
+     return item.type.includes(search.value) 
+   })
+   showProducts(searchProd)
+  }
   var gridDivBox = document.querySelector("#gridDivBox");
   var mainDiv = document.createElement("div");
   mainDiv.setAttribute("id", "gridProduct");
   gridDivBox.append(mainDiv);
-  showProducts();
+  showProducts(Data7);
 
-  function showProducts() {
+  function showProducts(Data7) {
+    document.querySelector("#gridProduct").innerHTML ="";
     Data7.map(function (item) {
       var imageDiv7 = document.createElement("div");
       var img = document.createElement("img");
@@ -286,9 +293,21 @@ var Data7 = [
       h2.textContent = `$ ${item.MRP}`;
 
       var btn5 = document.createElement("button");
-      btn5.textContent = "CHECKOUT";
+      btn5.textContent = "QUICK BUY";
+
+      btn5.addEventListener("click", function () {
+        addToCart(item)
+      })
       imageDiv7.append(img, p7, h2, btn5);
 
       mainDiv.append(imageDiv7);
     });
+
+    function addToCart(item) {
+        cart.push(item);
+        localStorage.setItem("Dermcart", JSON.stringify(cart))
+      
+    }
+  
+   
   }
