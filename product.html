@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="product.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="product.css">
 </head>
+
 <body>
   <div class="container">
     <div id="navbar1">
@@ -28,8 +30,8 @@
         <div class="topSearch">
           <form action="/search" method="get">
             <div class="searchBox">
-              <input type="text" placeholder="Search for Products and brands..." name="keywords" maxlength="100"
-                autocomplete="off" required />
+              <input type="text" class="sort" id="filterDiv" placeholder="Search for Products and brands..."
+                name="keywords" maxlength="100" autocomplete="off" required />
               <a href=""></a>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 style="fill: rgba(0, 0, 0, 1);">
@@ -57,7 +59,7 @@
               <circle cx="16.5" cy="19.5" r="1.5"></circle>
             </svg></a>
         </div>
-  
+
       </div>
       <nav class="navbar">
         <div class="container">
@@ -187,7 +189,7 @@
           <li><input type="checkbox" /><label class="ul2">Thickening (9)</label></li>
           <li><input type="checkbox" /><label class="ul2">UV - Sun Protection (6)</label></li>
           <li><input type="checkbox" /><label class="ul2">Volumizing (28)</label></li>
-         
+
         </ul>
         <hr>
         <h2 class="tx2">Hair Type</h2>
@@ -204,7 +206,7 @@
           <li><input type="checkbox" /><label class="ul2">Normal (158)</label></li>
           <li><input type="checkbox" /><label class="ul2">Oily (151)</label></li>
           <li><input type="checkbox" /><label class="ul2">Thick (140)</label></li>
-         
+
         </ul>
         <hr>
         <h2 class="tx2">Makeup Category</h2>
@@ -217,12 +219,13 @@
           <li><input type="checkbox" /><label class="ul2">Make Up Remover (10)</label></li>
           <li><input type="checkbox" /><label class="ul2">Brows (7)</label></li>
           <li><input type="checkbox" /><label class="ul2">Palettes (2)</label></li>
-         
+
         </ul>
         <hr>
         <h2 class="tx2">Makeup Product Type</h2>
         <ul class="ulMain">
-          <li><input style="border: 3px; font-size: 12px;" type="checkbox" /><label class="ul2">Foundation (22)</label></li>
+          <li><input style="border: 3px; font-size: 12px;" type="checkbox" /><label class="ul2">Foundation (22)</label>
+          </li>
           <li><input type="checkbox" /><label class="ul2">Primer (19)</label></li>
           <li><input type="checkbox" /><label class="ul2">Concealer (10)</label></li>
           <li><input type="checkbox" /><label class="ul2">Highlighter (7)</label></li>
@@ -233,7 +236,7 @@
           <li><input type="checkbox" /><label class="ul2">Setting Powder (3)</label></li>
           <li><input type="checkbox" /><label class="ul2">BB Cream (2)</label></li>
           <li><input type="checkbox" /><label class="ul2">Contour (2)</label></li>
-         
+
         </ul>
         <hr>
         <h2 class="tx2">Average Reviews</h2>
@@ -241,7 +244,7 @@
           <li><input style="border: 3px; font-size: 12px;" type="checkbox" /><label class="ul2">2-3 (12)</label></li>
           <li><input type="checkbox" /><label class="ul2">3-4 (101)</label></li>
           <li><input type="checkbox" /><label class="ul2">4+ (1399)</label></li>
-  
+
         </ul>
         <hr>
         <h2 class="tx2">Gender</h2>
@@ -252,12 +255,13 @@
         <hr>
         <h2 class="tx2">Price</h2>
         <ul class="ulMain">
-          <li><input style="border: 3px; font-size: 12px;" type="checkbox" /><label class="ul2">Less than $10 (17)</label></li>
+          <li><input style="border: 3px; font-size: 12px;" type="checkbox" /><label class="ul2">Less than $10
+              (17)</label></li>
           <li><input type="checkbox" /><label class="ul2">$10 - $25 (234)</label></li>
           <li><input type="checkbox" /><label class="ul2">$25 - $50 (728)</label></li>
           <li><input type="checkbox" /><label class="ul2">$50 - $100 (601)</label></li>
           <li><input type="checkbox" /><label class="ul2">More than $100 (285)</label></li>
-  
+
         </ul>
         <hr>
         <h2 class="tx2">Savings</h2>
@@ -268,22 +272,92 @@
         </ul>
       </div>
       <div class="mainBox">
-  
-        <div class="productSort">
-          <span>Sort By:</span>
-          <a class="productSort1">Popularity</a>
-          <a class="productSort1">Name</a>
-          <a class="productSort1" onclick="sortLH()">Price Low to High</a>
-          <a class="productSort1" onclick="sortHL()">Price Hight to Low</a>
-          <a class="productSort1">Discount</a>
-          <a class="productSort1">New Arrivals</a>
+        <h1>"Products"</h1>
+        <p style="padding: 15px;">1787 Results</p>
+        <div id="sortDiv">
+          <select id="sortByprice" class="sort" onclick="handlePriceSort()">
+            <option value="">Sort by Price</option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+          </select>
+          
+          <select id="sortByName" class="sort" onclick="handleNameSort()">
+            <option value="">Sort by Name</option>
+            <option value="asc">Assending Order</option>
+            <option value="dsc">Desinding Order</option>
+          </select>
         </div>
-        <hr>
-        <div class="product" id="DreamProduct">
+        <div id="gridDivBox">
+
         </div>
       </div>
     </div>
-  
+    <hr style="margin-top: 20px;">
+    <div class="footer">
+        <div class="leftfooter">
+            <p>Sign up to our newsletters and receive the latest exclusive discounts and deals</p>
+            <a href="signup.html"><button class="signme" style="width: 150px;font-size: 18px;">SIGN ME UP</button></a>
+            
+        </div>
+        <div  class="rightfooter">
+            <p>Connect with us</p>
+            <div>
+                <a href="#"> <img width="200px"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0YEKRd-Bs1_mznyYmHyihPuVhuvtAbTVLHzAa-u1SYbxPcLeJWkqP9tQevh3r42NfXw&usqp=CAU" alt="">   </a>
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer1">
+        <div class="footerbox1">
+            <hr>
+            <p>er Service</p>
+            <p>Help Center / FAQs</p>
+            <p>Returns</p>
+            <p>Shipping Informatio</p>
+            <p>Order Status</p>
+           
+        </div>
+        <div class="footerbox2">
+            <hr>
+            <p>My Account</p>
+            <p> Manage My Subscriptons</p>
+            <p>My Rewards</p>
+            <p>My Favorites</p>
+            <p>Referrals</p>
+            <p>Order History</p>
+        </div>
+        <div class="footerbox3">
+            <hr>
+            <p>Company</p>
+            <p>About Us</p>
+            <p>Dermstore Spa</p>
+            <p>Pres</p>
+        
+        </div>
+        <div class="footerbox4">
+            <hr>
+            <p>Legal</p></a>
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
+            <p>Modern Slavery Statemen</p>
+            <p>Product Recall</p>
+            <p>Accessibility</p>
+        </div>
+    </div>
+    <hr>
+    <div class="btmfooter">
+        <div class="btm1">
+            <h1>THG</h1>
+            <p>2021 @ The Hut.Com Ltd</p>
+        </div>
+        <div class="btm2">
+            <h2>Pay securely with</h2>
+            <img width="200px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB1U2XZDSsGx1PUSLtROTqH5yfd9iRMgRl5OSzkjHchENXy_f-ph-OypXX_rInqX6Zeg&usqp=CAU" alt="">
+        </div>
+    </div>
+
   </div>
 </body>
+
 </html>
+<script src="product.js"></script>

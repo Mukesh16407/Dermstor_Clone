@@ -1,6 +1,11 @@
+.container{
+    background-color: white;
+}
+
 .productbox{
     display: flex;
     width: 100%;
+    height: fit-content;
     background-color: white;
 }
 .sideLeft{
@@ -43,3 +48,64 @@ input[type=checkbox] {
     vertical-align: text-bottom;
     margin-left: 5px;
 }
+
+  #sortDiv{
+    display: flex;
+    width: 40%;
+    
+  }
+  .sort{
+    width: 150px;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  .mainBox{
+      display: flex;
+      flex-direction: column;
+  }
+  #gridDivBox{
+      width: 99%;
+      margin-top: 20px;
+      background-color: white;
+      
+      
+      
+  }
+  .mainBox{
+      width: 77%;
+      background-color: white;
+      overflow-y: scroll;
+  }
+  #gridProduct {
+    width: 98%;
+    height: 150px;
+    display: grid;
+    grid-template-columns:300px 300px 300px;
+    grid-gap: 5%;
+    position: relative;
+    margin: auto;
+   
+    
+  }
+  #gridProduct > div{
+      margin-top: 10px;
+  }
+  #gridProduct > div > img {
+   width: 100%;
+  }
+  button {
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    border: 0;
+  }
+  #gridProduct > div > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ 
+ }
