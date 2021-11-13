@@ -1,0 +1,45 @@
+.productbox{
+    display: flex;
+    width: 100%;
+    background-color: white;
+}
+.sideLeft{
+    width: 20%;
+    padding: 20px;
+    margin-left: 60px;
+    list-style-type:none;
+}
+.tex1{
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 10px;  
+}
+.tx2{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: sans-serif;
+    margin-top: 5px;
+}
+.ulMain{
+    list-style-type:none;
+    line-height: 30px;
+    height: 100px;
+    overflow-y: scroll;
+    font-size: 18px;
+    padding: 10px;
+    
+    
+}
+hr{
+    margin-top: 10px;
+}
+input[type=checkbox] {
+    zoom: 1.6;
+    border-radius: 0px;
+    
+}
+.ul2{
+    vertical-align: text-bottom;
+    margin-left: 5px;
+}
