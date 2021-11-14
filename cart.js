@@ -1,4 +1,4 @@
-i
+
 var prodInfo = JSON.parse(localStorage.getItem("Dermcart"))||[]
 displayitems(prodInfo)
 console.log(prodInfo)
