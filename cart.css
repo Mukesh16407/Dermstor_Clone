@@ -19,6 +19,7 @@
 .h2item{
     font-weight: 300;
 }
+
 .alertbox{
     background-color: rgb(242,249,255);
     width: 95%;
@@ -27,3 +28,133 @@
     color: rgb(38,123,165);
     margin: 10px auto ;
 }
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+.cart-total{
+    display: flex;
+    justify-content: space-between;
+}
+.leftSide{
+  font-weight: 700;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+.shopingDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-right: 30px;
+    margin-left: 40px;
+    
+}
+.shopingDiv1{
+    display: flex;
+    flex-direction: column;
+}
+.shopbox{
+    font-size: 18px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid black;
+    padding: 10px;
+    font-weight: 300;
+}
+.shopbox:hover{
+ background-color: rgb(201, 201, 201);
+ cursor: pointer;
+}
+
