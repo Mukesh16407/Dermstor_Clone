@@ -279,7 +279,7 @@ button {
     
  }
  #block3_1,#block4_1,#block5_1{
-     width: 300px;
+     min-width: 300px;
     
      margin: 5px;  
      height: 100%;
