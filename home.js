@@ -93,6 +93,9 @@ var data = [
 
       var btn = document.createElement("button");
       btn.textContent = "QUICKBUY";
+      btn.addEventListener('click',function(){
+          window.location.href='product.html'
+      });
       imageDiv.append(img, p, p2, btn);
 
       block21.append(imageDiv);
@@ -192,6 +195,9 @@ var data = [
 
       var btn1 = document.createElement("button");
       btn1.textContent = "QUICKBUY";
+      btn1.addEventListener('click',function(){
+        window.location.href='product.html'
+     });
       imageDiv1.append(img, p1, p2, btn1);
 
       block3.append(imageDiv1);
@@ -296,6 +302,9 @@ var data = [
 
       var btn1 = document.createElement("button");
       btn1.textContent = "QUICKBUY";
+      btn1.addEventListener('click',function(){
+        window.location.href='product.html'
+     });
       imageDiv1.append(img, p2, h3, btn1);
 
       block4.append(imageDiv1);
@@ -359,6 +368,9 @@ var data = [
 
       var btn2 = document.createElement("button");
       btn2.textContent = "QUICKBUY";
+      btn2.addEventListener('click',function(){
+        window.location.href='product.html'
+     });
       imageDiv2.append(img, p3, btn2);
 
       block5.append(imageDiv2);
