@@ -40,23 +40,24 @@
                      <h2 style="margin-top:10px ;font-weight: 500;">Checkout as a guest</h2>
                      <p>Complete your order without signing up, or sign up after payment.</p>
                      <h3 style="margin-top: 10px;margin-bottom: 20px;font-weight: 400;">1. Email and delivery address</h3>
-                     <form class="guestform">
+                     <form class="guestform" id="formid">
                          <label for="email">*Email address</label>
                          <input type="text"id="email">
+                         <p id="WrongEmail"></p>
                          <label for="country">Country/Region</label>
                          <input type="text" id="myText">
                          <p class="marginCheck">We'll send the purchase receipt to this email.</p>
-                         <p></p>
+                         
                          <label for="name">Full Name</label>
                          <input type="text"id="name">
-                         <p></p>
+                         <p id="WrongName"></p>
                          <label for="address">Address Search</label>
                          <input type="text"id="search">
                          <p class="marginCheck">or Enter Address Manually</p>
                          <label for="contact">*Contact Number</label>
                          <input type="number" id="phone">
                          <p class="marginCheck">Why do we need your number?</p>
-                         <p></p>
+                         <p id="wrongPhone"></p>
                      </form>
                  </div>
                  <div class=" deliveryOption">
