@@ -6,9 +6,9 @@ document.getElementById("myText").defaultValue = "United State";
 function formValidation(e) {
   e.preventDefault();
   
-  var Email = document.getElementById("email").value;
-  var Name = document.getElementById("Name").value;
-  var Phone = document.getElementById("phone").value;
+  var Email = document.getElementById("email");
+  var Name = document.getElementById("Name");
+  var Phone = document.getElementById("phone");
   
   console.log(Email)
  if(Email== "" ){
@@ -124,7 +124,7 @@ function validation(e) {
     return false
   }
   else{
-    alert("sucessfully Payment");
+    
     document.getElementById("form_1").addEventListener("submit", OtpPage);
     function OtpPage() {
       var name = document.getElementById("name");
@@ -136,6 +136,7 @@ function validation(e) {
         password.value.length === 16 &&
         cvv.value.length === 3
       ) {
+        alert("Please Enter 4 Digts OTP Number");
         window.location.href = "OTP.html";
       }
     }
