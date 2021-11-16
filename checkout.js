@@ -1,26 +1,16 @@
 
 document.getElementById("formid").addEventListener("submit",formValidation);
 
-
-var Email = document.getElementById("email").value;
-var Name = document.getElementById("name").value;
-var Phone = document.getElementById("phone").value;
-
 document.getElementById("myText").defaultValue = "United State";
- console.log(Email)
 
 function formValidation(e) {
   e.preventDefault();
-
-  var gestObj ={
-      Email:formid.email.value,
-      Name:formid.name.value,
-      phone:formid.phone.value
-  };
   
-   console.log(gestObj)
+  var Email = document.getElementById("email").value;
+  var Name = document.getElementById("Name").value;
+  var Phone = document.getElementById("phone").value;
   
-  
+  console.log(Email)
  if(Email== "" ){
  
   document.getElementById("email").style.borderColor = "red";
@@ -50,21 +40,21 @@ if((Email.charAt(Email.length -4) != ".") && (Email.charAt(Email.length -3) != "
 } 
 if(Name == ""){
         
-    document.getElementById("name").style.borderColor = "red";
+    document.getElementById("Name").style.borderColor = "red";
     document.getElementById('WrongName').textContent = '**Full Name is a required field';
     document.getElementById('WrongName').style.color="rgb(250,232,230)";
     return false
 }
   
 if(Name.length <= 2){
-  document.getElementById("name").style.borderColor = "red";
+  document.getElementById("Name").style.borderColor = "red";
   document.getElementById('WrongName').textContent = '**Please Fill Valid User Name';
   document.getElementById('WrongName').style.color="rgb(250,232,230)";
   return false
 }
 
 if(!isNaN(Name)){
-  document.getElementById("name").style.borderColor = "red";
+  document.getElementById("Name").style.borderColor = "red";
   document.getElementById('WrongName').textContent = '**Only Characters are allowed';
   document.getElementById('WrongName').style.color="rgb(250,232,230)";
   return false
@@ -107,3 +97,48 @@ if(!isNaN(Name)){
    }
   //console.log(arrObj);  
 }
+
+
+function validation(e) {
+  e.preventDefault();
+
+  var password = document.getElementById("cardNumber");
+  var name = document.getElementById("name");
+  var month = document.getElementById("select1");
+  var year = document.getElementById("select2");
+  var cvv = document.getElementById("pass");
+
+  
+
+  if(password.value.length !== 16){
+    password.style.border ="2px solid red";
+    return false
+  }
+  
+  if(name.value.length == ""){
+    name.style.border ="2px solid red";
+    return false
+   }
+  if(cvv.value.length !==3){
+    cvv.style.border ="2px solid red";
+    return false
+  }
+  else{
+    alert("sucessfully Payment");
+    document.getElementById("form_1").addEventListener("submit", OtpPage);
+    function OtpPage() {
+      var name = document.getElementById("name");
+      var password = document.getElementById("cardNumber");
+      var cvv = document.getElementById("pass");
+
+      if (
+        name.value.length > 0 &&
+        password.value.length === 16 &&
+        cvv.value.length === 3
+      ) {
+        window.location.href = "OTP.html";
+      }
+    }
+  }
+}
+ 
