@@ -64,6 +64,7 @@ function displayitems(productInfo) {
 
 
         var td4 = document.createElement("td");
+        td4.setAttribute("class", "addTotalPrice")
         td4.innerHTML = (item.quantity) * Number(item.MRP);
         totalCartValue += (item.quantity) * Number(item.MRP);
 
@@ -84,6 +85,7 @@ function displayitems(productInfo) {
 
 }
 
+
 function checkout(){
     localStorage.setItem('Dermcart', JSON.stringify(prodInfo));
     window.location.href = 'checkout.html'
@@ -101,3 +103,7 @@ window.addEventListener("load", function () {
 })
 
 
+
+
+    
+  
