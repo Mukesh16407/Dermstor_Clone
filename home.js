@@ -378,7 +378,47 @@ var data = [
   }
 
  
-  
+  let images = [
+    "https://static.thcdn.com/images/xlarge/webp/widgets/208-us/51/original-MicrosoftTeams-image_%286%29-090051.png",
+    "https://static.thcdn.com/images/xlarge/webp/widgets/208-us/59/original-afterpay-hp_%281%29-031359.png",
+    
+];
+
+
+
+
+
+let container = document.getElementById("slidewindow");
+
+
+function startslideshow() {
+
+    let counter = 0;
+    let img = document.createElement("img");
+    img.src = images[0];
+
+    container.append(img);
+    counter = counter + 1;
+
+    let interval = setInterval(function() {
+        container.innerHTML = null;
+
+        if (counter === images.length) {
+            counter = 0;
+        }
+        let img = document.createElement("img");
+
+        img.src = images[counter];
+        container.append(img);
+        counter = counter + 1;
+    }, 4000);
+}
+startslideshow();
+
+
+
+let img = document.createElement("img");
+
 
 
   

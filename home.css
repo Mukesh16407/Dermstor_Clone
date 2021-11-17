@@ -135,12 +135,14 @@ body{
 #slidewindow{
     width: 100%;
     height: 500px;
+    box-sizing: border-box;
     cursor: pointer;
     
+    
 }
-#slidewindow > img{
+#slidewindow>img {
     width: 100%;
-    height: 100%;
+    height: 98%;
 }
 
 #slidewindow1{
